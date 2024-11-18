@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubicks Modal Documentation</title>
+
+    <!-- Fonts and Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/Rubicks/stylesheets/rubicks.css">
+    <link rel="stylesheet" href="./stylesheets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/public/image/rubik_cube.png" type="image/x-icon">
+
+    <!-- Scripts -->
+    <script src="/Rubicks/javascripts/rubicks.js" type="module"></script>
+    <script src="./javascripts/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="container-xxl d-flex justify-content-between align-items-center flex-wrap gap-3 py-3 nav-primary">
+            <header>
+                <h1 class="m-0">
+                    <a class="focus-ring rounded-2 p-2 d-flex align-items-center gap-3 flex-wrap text-light"
+                        href="./index.html">
+                        <span>Rubicks Modal Library</span>
+                    </a>
+                </h1>
+            </header>
+        </div>
+    </nav>
+
+    <main class="container-xxl">
+        <div class="row px-2 py-4">
+
+            <!-- Sidebar -->
+            <div class="col-lg-3 ps-0">
+                <div class="sidebar ps-3 pe-4 d-none d-lg-block">
+                    <div class="d-flex w-100 rounded-3 flex-column gap-3">
+                        <div class="pb-2">
+                            <h2 class="fs-5 mb-3 d-flex align-items-center gap-2">
+                                <i class="fa-solid fa-cube text-primary"></i>
+                                <span>Table of Contents</span>
+                            </h2>
+                            <div class="list-group" role="list">
+                                <a class="list-group-item list-group-item-action focus-ring py-2" href="#section1"
+                                    role="listitem">
+                                    1. About Rubicks & Installation
+                                </a>
+                                <a class="list-group-item list-group-item-action focus-ring py-2" href="#section2"
+                                    role="listitem">
+                                    2. Modal Types
+                                </a>
+                                <div class="ps-3">
+                                    <a class="list-group-item list-group-item-action focus-ring py-1"
+                                        href="#alert-modal" role="listitem">
+                                        2.1 Alert Modal
+                                    </a>
+                                    <a class="list-group-item list-group-item-action focus-ring py-1"
+                                        href="#confirm-modal" role="listitem">
+                                        2.2 Confirm Modal
+                                    </a>
+                                    <a class="list-group-item list-group-item-action focus-ring py-1" href="#ajax-modal"
+                                        role="listitem">
+                                        2.3 AJAX Modal
+                                    </a>
+                                    <a class="list-group-item list-group-item-action focus-ring py-1"
+                                        href="#custom-modal" role="listitem">
+                                        2.4 Custom Modal
+                                    </a>
+                                </div>
+                                <a class="list-group-item list-group-item-action focus-ring py-2" href="#section3"
+                                    role="listitem">
+                                    3. Download
+                                </a>
+                                <a class="list-group-item list-group-item-action focus-ring py-2" href="#section4"
+                                    role="listitem">
+                                    4. Thank You
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Content -->
+            <div class="col-lg-9 pe-4">
+
+                <!-- Section 1 -->
+                <section class="pb-4" id="section1">
+                    <h2>1. What is Rubicks & Installation</h2>
+                    <hr>
+                    <p>
+                        <strong>Rubicks</strong> is a versatile and customizable JavaScript modal library designed to
+                        simplify the process of creating accessible and attractive modals on any website. With Rubicks,
+                        you can easily add alert, confirmation, AJAX, and custom content modals with minimal setup.
+                    </p>
+                    <h3>Installation</h3>
+                    <p>To install and use Rubicks, follow these steps:</p>
+                    <ol>
+                        <li>Download the library files from our page.</li>
+                        <a href="/Rubicks/Rubicks.zip" class="btn btn-primary my-4" download>
+                            Download Rubicks Library
+                        </a>
+                        <li>Include the following JavaScript and CSS files in your project:</li>
+                    </ol>
+                    <pre class="border rounded focus-ring"><code class="language-html">
+&lt;link rel="stylesheet" href="path/to/rubicks.css"&gt;
+&lt;script src="path/to/rubicks.js" type="module"&gt;&lt;/script&gt;
+                    </code></pre>
+                    <p>Replace <code>path/to/</code> with the correct file paths in your project structure.</p>
+                </section>
+
+                <!-- Section 2 -->
+                <section class="pb-4" id="section2">
+                    <h2>2. Modal Types</h2>
+                    <hr>
+
+                    <!-- Alert Modal -->
+                    <h3 id="alert-modal" class="p-4">Alert Modal</h3>
+                    <p>The alert modal displays a simple message with an "OK" button to close the modal.</p>
+                    <button class="btn btn-primary my-4" onclick="showAlertModal()">Open Alert Modal</button>
+                    <pre class="border rounded focus-ring"><code class="language-javascript">
+function showAlertModal() {
+    Rubicks.showAlert({
+        title: "Alert",
+        message: "This is an alert modal!",
+        okText: "Close",
+        callback: () => alert("Alert modal closed")
+    });
+}
+                    </code></pre>
+                    <pre class="border rounded focus-ring"><code class="language-html">
+&lt;!-- Button to open the alert modal --&gt;
+&lt;button onclick=&quot;showAlertModal()&quot;&gt;Open Alert Modal&lt;/button&gt;
+                    </code></pre>
+
+                    <!-- Confirm Modal -->
+                    <h3 id="confirm-modal" class="p-4">Confirm Modal</h3>
+                    <p>The confirm modal presents users with "Yes" and "No" options, and calls a callback function with
+                        the user's choice.</p>
+                    <button class="btn btn-primary my-4" onclick="showConfirmModal()">Open Confirm Modal</button>
+                    <pre class="border rounded focus-ring"><code class="language-javascript">
+function showConfirmModal() {
+    Rubicks.showConfirm({
+        title: "Confirm",
+        message: "Do you confirm this action?",
+        okText: "Yes",
+        cancelText: "No",
+        callback: (result) => alert(result ? "Confirmed" : "Canceled")
+    });
+}
+                    </code></pre>
+                    <pre class="border rounded focus-ring"><code class="language-html">
+&lt;!-- Button to open the confirm modal --&gt;
+&lt;button onclick=&quot;showConfirmModal()&quot;&gt;Open Confirm Modal&lt;/button&gt;
+                    </code></pre>
+
+                    <!-- AJAX Modal -->
+                    <h3 id="ajax-modal" class="p-4">AJAX Modal</h3>
+                    <p>This modal type fetches and displays HTML content from a specified URL, useful for dynamically
+                        loading information.</p>
+                    <button class="btn btn-primary my-4" onclick="showAjaxModal()">Open AJAX Modal</button>
+                    <pre class="border rounded focus-ring"><code class="language-javascript">
+function showAjaxModal() {
+    Rubicks.showAjax({
+        title: "AJAX Content",
+        url: "./ajax.html",
+        okText: "Close"
+    });
+}
+                    </code></pre>
+                    <pre class="border rounded focus-ring"><code class="language-html">
+&lt;!-- Button to open the ajax modal --&gt;
+&lt;button onclick=&quot;showAjaxModal()&quot;&gt;Open Ajax Modal&lt;/button&gt;
+                    </code></pre>
+
+                    <!-- Custom Modal -->
+                    <h3 id="custom-modal" class="p-4">Custom Modal in HTML</h3>
+                    <p>You can also create custom modals by directly embedding HTML content in your page and styling it
+                        with Rubicks. Here’s how you can implement it:</p>
+
+                    <button class="btn-primary my-4" onclick="Rubicks.rubicksModal('customModal1', { 
+                        url: 'https://jsonplaceholder.typicode.com/posts/1',
+                        callback: () => alert('Custom alert closed!')
+                    })">
+                        Exemple custom 1
+                    </button>
+
+
+
+
+                    <pre class="border rounded focus-ring"><code class="language-html">
+&lt;!-- Custom modal with callback (alert) and Ajax call --&gt;
+&lt;div id="customModal" class="rubicks-modal"&gt;
+    &lt;h2&gt;Custom Modal Title&lt;/h2&gt;
+    &lt;div class="rubicks-modal-body"&gt;
+        This is where the ajax content will go.
+    &lt;/div&gt;
+    &lt;div class="rubicks-modal-buttons"&gt;
+&lt;!-- Implement close button --&gt;
+        &lt;button class="primary"&gt;Close&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+                    <pre class="border rounded focus-ring"><code class="language-html">
+&lt;!-- Button to open the custom modal 1 --&gt;
+    &lt;button 
+        onclick=&quot;Rubicks.rubicksModal('customModal', { 
+            url: 'your_url',
+            callback: () => alert('Custom alert closed!')
+        })&quot;
+    &gt;
+         Exemple custom 1
+&lt;/button&gt;
+                        </code></pre>
+                    <button class="btn-primary my-4" onclick="Rubicks.rubicksModal('customModal2', { 
+                            url: 'https://jsonplaceholder.typicode.com/posts/1',
+                            callback: (result) => {
+                                if (result) {
+                                    alert('AJAX modal confirmed!');
+                                } else {
+                                    alert('AJAX modal cancelled!');
+                                }
+                            }
+                        })">
+                        Exemple custom 2
+                    </button>
+
+
+
+
+
+                    <pre class="border rounded focus-ring"><code class="language-html">
+&lt;!-- Custom modal with callback (confirm) and Ajax call --&gt;
+&lt;div id="customModal" class="rubicks-modal"&gt;
+    &lt;h2&gt;Custom Modal Title&lt;/h2&gt;
+    &lt;div class="rubicks-modal-body"&gt;
+        This is where the ajax content will go.
+    &lt;/div&gt;
+    &lt;div class="rubicks-modal-buttons"&gt;
+&lt;!-- Implement confirm and cancel buttons --&gt;
+        &lt;button class="primary"&gt;Confirm&lt;/button&gt; 
+        &lt;button class="secondary"&gt;Cancel&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code></pre>
+                    <pre class="border rounded focus-ring"><code class="language-html">
+&lt;!-- Button to open the custom modal 2 --&gt;
+&lt;button 
+    onclick=&quot;Rubicks.rubicksModal('customModal', { 
+        url: 'your_url',
+        callback: (result) => {
+            if (result) {
+                alert(&#x27;AJAX modal confirmed!&#x27;);
+            } else {
+                alert(&#x27;AJAX modal cancelled!&#x27;);
+            }
+        }
+    })&quot;
+    &gt;
+        Open Custom Modal with AJAX
+&lt;/button&gt;
+                                
+                            </code></pre>
+
+
+                </section>
+
+                <!-- Section 3 -->
+                <section class="pb-4" id="section3">
+                    <h2>3. Download</h2>
+                    <hr>
+                    <p>To download the Rubicks Modal Library, click the button below:</p>
+                    <a href="/Rubicks/Rubicks.zip" class="btn btn-primary my-4" download>Download Rubicks Library</a>
+                    <p>This zip file contains all necessary files and documentation to get started.</p>
+                </section>
+
+                <!-- Section 4 -->
+                <section class="pb-4" id="section4">
+                    <h2>4. Thank You!</h2>
+                    <hr>
+                    <p>Thank you for using Rubicks! We hope this library helps you create beautiful and functional
+                        modals. For feedback or contributions, please reach out or visit our GitHub repository.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center">
+        <small>© 2024 Rubicks Modal Library</small>
+    </footer>
+
+    <div id="customModal1" class="rubicks-modal">
+        <h2>Custom Modal 1</h2>
+        <div class="rubicks-modal-body">
+            <p>This is where the custom content will go.</p>
+        </div>
+        <div class="rubicks-modal-buttons">
+            <button class="primary">Close</button>
+        </div>
+    </div>
+
+    <div id="customModal2" class="rubicks-modal">
+        <h2>Custom Modal 2</h2>
+        <div class="rubicks-modal-body">
+            <p>This is where the custom content will go.</p>
+        </div>
+        <div class="rubicks-modal-buttons">
+            <button class="primary">Confirm</button>
+            <button class="secondary">Cancel</button>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
